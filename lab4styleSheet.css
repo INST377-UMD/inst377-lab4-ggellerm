@@ -1,10 +1,11 @@
 
 body {
     background-color: rgb(189, 217, 239);
+    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-  h1{
+h1{
     color:rgb(94, 85, 45)
   }
 #input {
@@ -15,6 +16,40 @@ body {
 
 #label {
     font-size: 24px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: rgb(94, 212, 218);
+}
+
+.section {
+    flex: 1 1 40%; 
+    border: 5px solid black;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(90,100,200);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.section form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+button, input {
+    padding: 5px 10px;
+    margin-top: 10px;
 }
 
 .headAndFoot{
