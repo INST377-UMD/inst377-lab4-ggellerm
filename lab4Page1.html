@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>LAB 3 PAGE 1</title>
+        <link rel = "stylesheet" href="/Users/gracegellerman/Documents/INST377/inst377-lab4-ggellerm/lab4styleSheet.css">
+
+    </head>
+    <body>
+
+        <h1>INST377 - Lab 4</h1>
+
+        <div class="container">
+            <div class="section">
+                <form id="alertMeForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <button type="submit">Alert Me!</button>
+                </form>
+            </div>
+    
+            <div class="section">
+                <button onclick="changeColor()">Change Color</button>
+            </div>
+    
+            <div class="section">
+                <form id="textTesterForm">
+                    <label for="textToValidate">Text Tester:</label>
+                    <input type="text" id="textToValidate" required>
+                    <button onclick="formValidation"">Validate Text</button>
+                </form>
+            </div>
+    
+            <div class="section">
+                <button onclick="addText()">Add Text</button>
+            </div>
+        </div>
+
+        <head>
+            <title>INST377 - JS Practice</title>
+        </head>
+
+
+    
+        <script>
+            // Alert Me Section
+            document.getElementById('alertMeForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value;
+                if (name) {
+                    alert("Hi " + name + "!");
+                }
+            });
+    
+            // Change Color Section
+            let isBlue = true;
+            function changeColor() {
+                if (isBlue) {
+                    document.body.style.backgroundColor = 'purple';
+                } else {
+                    document.body.style.backgroundColor = 'lightblue'; // Light blue
+                }
+                isBlue = !isBlue;
+            }
+    
+            // Text Tester Section
+            document.getElementById('textTesterForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var text = document.getElementById('textToValidate').value;
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(text)) {
+                    alert("How about.... nah :");
+                } else {
+                    alert("Good to Go!");
+                }
+            });
+    
+            // Add Text Section
+            function addText() {
+                var heading = document.querySelector('h1');
+                heading.textContent += " Add Text";
+            }
+        </script>
+    
+
+    </body>
